@@ -53,5 +53,6 @@ sudo make install
 
 # Building the Project
 echo ">>Building capturing system..."
+sudo apt-get install qt4-qmake libqt4-dev
 cd ~/paol-code
 ./build.sh
