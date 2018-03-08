@@ -10,7 +10,7 @@ else
 	echo ">>Exiting..."
 	exit 0
 fi
-
+sudo -s
 cd ~
 # clone the calendar parser
 echo ">>Setting up calendar parser..."
@@ -34,6 +34,9 @@ wget http://download.qt.io/archive/qt/5.3/5.3.1/qt-opensource-linux-x64-5.3.1.ru
 chmod +x qt-opensource-linux-x64-5.3.1.run
 echo ">>Please follow the instruction in GUI Interface for installation"
 ./qt-opensource-linux-x64-5.3.1.run
+wget http://fr.archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base0.10/libgstreamer-plugins-base0.10-0_0.10.36-1_amd64.deb
+wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/g/gstreamer0.10/libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb
+sudo dpkg -i libgstreamer*.deb
 
 # Setup Opencv
 cd ~
@@ -53,6 +56,7 @@ sudo make install
 
 # Building the Project
 echo ">>Building capturing system..."
+sudo apt-get install gstreamer1.0-plugins-bad
 sudo apt install v4l-utils
 sudo apt-get install qt4-qmake libqt4-dev
 cd ~/paol-code
