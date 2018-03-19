@@ -37,6 +37,7 @@ echo ">>Please follow the instruction in GUI Interface for installation"
 wget http://fr.archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base0.10/libgstreamer-plugins-base0.10-0_0.10.36-1_amd64.deb
 wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/g/gstreamer0.10/libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb
 sudo dpkg -i libgstreamer*.deb
+sudo apt-get install gstreamer1.0-plugins-ugly
 
 # Setup Opencv
 cd ~
@@ -56,7 +57,7 @@ sudo make install
 
 # Building the Project
 echo ">>Building capturing system..."
-sudo apt-get install gstreamer1.0-plugins-bad
+sudo apt-get install gstreamer-tools gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly gstreamer0.10-plugins-ugly-multiverse gstreamer0.10-plugins-bad-multiverse ffmpeg
 sudo apt install v4l-utils
 sudo apt-get install qt4-qmake libqt4-dev
 cd ~/paol-code
